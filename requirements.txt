@@ -1,0 +1,5 @@
+streamlit
+PyPDF2
+requests
+tavily-python
+python-dotenv
