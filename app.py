@@ -11,6 +11,13 @@ load_dotenv()
 TAVILY_KEY = os.getenv("TAVILY_API_KEY", "")
 OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY", "")
 
+try:
+    TAVILY_KEY = st.secrets["TAVILY_API_KEY"]
+    OPENROUTER_KEY = st.secrets["OPENROUTER_API_KEY"]
+except:
+    pass
+
+
 st.set_page_config(page_title="Fact-Check Agent", page_icon="🔍", layout="wide")
 st.title("🔍 The Fact-Check Agent")
 st.write("Upload a marketing PDF to extract claims, cross-reference against live web data, and flag inaccuracies.")
